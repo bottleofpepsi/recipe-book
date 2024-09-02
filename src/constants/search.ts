@@ -1,0 +1,30 @@
+export const dietFilters = [
+    { id: 0, apiParam: "", text: "Any" },
+    { id: 1, apiParam: "balanced", text: "Balanced" },
+    { id: 2, apiParam: "high-fiber", text: "High-Fiber" },
+    { id: 3, apiParam: "high-protein", text: "High-Protein" },
+    { id: 4, apiParam: "low-carb", text: "Low-Carb" },
+    { id: 5, apiParam: "low-fat", text: "Low-Fat" },
+    { id: 6, apiParam: "low-sodium", text: "Low-Sodium" },
+]
+
+export const dishTypeFilters = [
+    { id: 0, apiParam: "", text: "Any" },
+    { id: 1, apiParam: "biscuits and cookies", text: "Biscuits and Cookies" },
+    { id: 2, apiParam: "bread", text: "Bread" },
+    { id: 3, apiParam: "cereals", text: "Cereals" },
+    { id: 4, apiParam: "condiments and sauces", text: "Condiments and Sauces" },
+    { id: 5, apiParam: "drinks", text: "Drinks" },
+    { id: 6, apiParam: "egg", text: "Egg" },
+    { id: 7, apiParam: "ice cream and custard", text: "Ice Cream and Custard" },
+    { id: 8, apiParam: "main course", text: "Main Course" },
+    { id: 8, apiParam: "pasta", text: "Pasta" },
+    { id: 9, apiParam: "pastry", text: "Pastry" },
+    { id: 10, apiParam: "pizza", text: "Pizza" },
+    { id: 11, apiParam: "salad", text: "Salad" },
+    { id: 12, apiParam: "sandwiches", text: "Sandwiches" },
+    { id: 13, apiParam: "seafood", text: "Seafood" },
+    { id: 14, apiParam: "side dish", text: "Side Dish" },
+    { id: 15, apiParam: "soup", text: "Soup" },
+    { id: 16, apiParam: "starter", text: "Starter" },
+]
