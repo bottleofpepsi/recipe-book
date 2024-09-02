@@ -6,7 +6,7 @@ export const dietFilters = [
     { id: 4, apiParam: "low-carb", text: "Low-Carb" },
     { id: 5, apiParam: "low-fat", text: "Low-Fat" },
     { id: 6, apiParam: "low-sodium", text: "Low-Sodium" },
-]
+];
 
 export const dishTypeFilters = [
     { id: 0, apiParam: "", text: "Any" },
@@ -27,4 +27,4 @@ export const dishTypeFilters = [
     { id: 14, apiParam: "side dish", text: "Side Dish" },
     { id: 15, apiParam: "soup", text: "Soup" },
     { id: 16, apiParam: "starter", text: "Starter" },
-]
+];
