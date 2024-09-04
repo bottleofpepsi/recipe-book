@@ -3,8 +3,8 @@ import Ingredient from "./ingredient";
 
 export type SearchParameters = {
     query: string;
-    diet: string;
-    dishType: string;
+    dietValues: string[];
+    dishTypeValues: string[];
     nextLink?: string;
 };
 
