@@ -28,6 +28,8 @@ export function processResults(data: Results) {
     );
     result.nextLink = data._links.next?.href;
     result.totalCount = data.count;
+    result.from = data.from;
+    result.to = data.to;
 
     return result;
 }
