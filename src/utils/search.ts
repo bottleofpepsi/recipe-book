@@ -1,13 +1,25 @@
 import { SearchParameters } from "@/types/search";
 
-export function processQuery({ query, diet, dishType }: SearchParameters) {
+export function processQuery({
+    query,
+    dietValues,
+    dishTypeValues,
+}: SearchParameters) {
     const { URL, KEY, ID } = getAPIEnvVars();
+    const queryParams = [
+        ["type", "public"],
+        ["app_id", ID as string],
+        ["app_key", KEY as string],
+    ];
 
-    return (
-        `${URL}?type=public${query && `&q=${query}`}&app_id=${ID}` +
-        `&app_key=${KEY}${diet && `&diet=${diet}`}` +
-        `${dishType && `&dishType=${dishType}`}`
+    if (query) queryParams.push(["q", query]);
+
+    queryParams.push(...dietValues.map((diet) => ["diet", diet]));
+    queryParams.push(
+        ...dishTypeValues.map((dishType) => ["dishType", dishType])
     );
+
+    return `${URL}?${new URLSearchParams(queryParams).toString()}`;
 }
 
 export function getAPIEnvVars() {
