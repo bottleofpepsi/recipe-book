@@ -8,8 +8,10 @@ export type Recipe = {
 };
 
 export type Recipes = {
-    items: Recipe[];
+    from: number;
+    to: number;
     totalCount: number;
+    items: Recipe[];
     nextLink?: string;
 };
 
