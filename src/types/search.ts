@@ -27,6 +27,8 @@ export type ResultItemInfo = ResultItem & {
 };
 
 export type Results = {
+    from: number;
+    to: number;
     count: number;
     _links: {
         next?: {
