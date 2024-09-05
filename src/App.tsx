@@ -16,6 +16,7 @@ function App() {
                         <SearchPage />
                     </ErrorBoundary>
                 }
+                errorElement={<ErrorPage />}
             />
             <Route
                 path="/:id"
@@ -24,6 +25,7 @@ function App() {
                         <RecipeInfoPage />
                     </ErrorBoundary>
                 }
+                errorElement={<ErrorPage />}
             />
             <Route path="/error" element={<ErrorPage />} />
         </Routes>
