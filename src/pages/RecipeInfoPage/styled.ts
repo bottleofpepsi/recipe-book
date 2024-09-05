@@ -48,5 +48,11 @@ export const RecipeLink = styled.a`
 `;
 
 export const DishImage = styled.img`
+    position: sticky;
+    top: calc(50vh - 200px);
     border-radius: 20px;
+`;
+
+export const ImageWrapper = styled.div`
+    align-self: stretch;
 `;
