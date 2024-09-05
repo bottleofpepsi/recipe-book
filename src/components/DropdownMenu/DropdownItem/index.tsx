@@ -8,13 +8,13 @@ import * as S from "./styled";
 function DropdownItem({ itemDetails, onItemClicked }: ItemProps) {
     const [isSelected, setSelected] = useState(false);
 
-    const handleClick = () => {
+    const handleChoice = () => {
         onItemClicked(itemDetails.apiParam, !isSelected);
         setSelected(!isSelected);
     };
 
     return (
-        <S.DropdownItem onClick={handleClick} selected={isSelected}>
+        <S.DropdownItem onClick={handleChoice} selected={isSelected}>
             <S.Text>{itemDetails.text}</S.Text>
             {isSelected && <img src={CheckMark} width={16} height={16} />}
         </S.DropdownItem>

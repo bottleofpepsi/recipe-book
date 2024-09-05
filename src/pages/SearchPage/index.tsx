@@ -58,7 +58,7 @@ function SearchPage() {
         <>
             <Header isHomePage={true}></Header>
             <S.Main>
-                <SearchSection params={parameters} setParams={setParameters} />
+                <SearchSection setParams={setParameters} />
                 <SearchResults>
                     {results.items?.map((recipe) => (
                         <Link to={`/${recipe.id}`}>
