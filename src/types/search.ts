@@ -37,3 +37,5 @@ export type Results = {
     };
     hits: ResultItem[];
 };
+
+export type ParamSetter = (arg1: string, arg2: boolean) => void;

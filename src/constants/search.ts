@@ -1,5 +1,4 @@
 export const dietFilters = [
-    { id: 0, apiParam: "", text: "Any" },
     { id: 1, apiParam: "balanced", text: "Balanced" },
     { id: 2, apiParam: "high-fiber", text: "High-Fiber" },
     { id: 3, apiParam: "high-protein", text: "High-Protein" },
@@ -9,7 +8,6 @@ export const dietFilters = [
 ];
 
 export const dishTypeFilters = [
-    { id: 0, apiParam: "", text: "Any" },
     { id: 1, apiParam: "biscuits and cookies", text: "Biscuits and Cookies" },
     { id: 2, apiParam: "bread", text: "Bread" },
     { id: 3, apiParam: "cereals", text: "Cereals" },

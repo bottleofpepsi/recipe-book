@@ -29,3 +29,12 @@ export function getAPIEnvVars() {
         URL: process.env.API_URL,
     };
 }
+
+export function setParameter(param: string[], value: string, set: boolean) {
+    if (set) {
+        param.push(value);
+        return;
+    }
+
+    param.splice(param.indexOf(value), 1);
+}
