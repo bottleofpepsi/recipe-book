@@ -12,4 +12,8 @@ export const CustomButton = styled.button<{ $styles: RuleSet<object> }>`
     cursor: pointer;
 
     ${(props) => props.$styles}
+
+    @media (max-width: 600px) {
+        width: 150px;
+    }
 `;
