@@ -1,45 +1,61 @@
-import React, { ChangeEvent, KeyboardEvent } from "react";
+import { useFormik } from "formik";
+import React, { useEffect, useRef } from "react";
 
 import SearchIcon from "@/assets/search-icon.svg";
+import { validationSchema } from "@/constants";
 import { dietFilters, dishTypeFilters } from "@/constants/search";
-import { setParameter } from "@/utils";
+import { focusRef, setParameter } from "@/utils";
 
 import DropdownMenu from "../DropdownMenu";
 import * as S from "./styled";
 import { Props } from "./types";
 
-function SearchSection({ params, setParams }: Props) {
-    const newParams = { ...params, nextLink: "" };
+function SearchSection({ setParams }: Props) {
+    const inputRef = useRef(null);
 
-    const setDishType = setParameter.bind(null, newParams.dishTypeValues);
-    const setDiet = setParameter.bind(null, newParams.dietValues);
+    const formik = useFormik({
+        initialValues: {
+            query: "",
+            dishTypeValues: [],
+            dietValues: [],
+        },
+        validationSchema: validationSchema,
+        onSubmit: (values) => {
+            setParams({ ...values, nextLink: "" });
+        },
+    });
 
-    const setNewParams = () => {
-        setParams(newParams);
-    };
+    const setDishType = setParameter.bind(formik.values.dishTypeValues);
+    const setDiet = setParameter.bind(formik.values.dietValues);
 
-    const handleEnter = (event: KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === "Enter") setNewParams();
-    };
+    const isTouched =
+        formik.touched.dietValues ||
+        formik.touched.dishTypeValues ||
+        formik.touched.query;
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        newParams.query = event.target.value;
-    };
+    useEffect(() => {
+        focusRef(inputRef);
+    }, [formik.errors]);
 
     return (
-        <S.SearchForm>
+        <S.SearchForm onSubmit={formik.handleSubmit}>
             <S.Heading1>Discover Recipe & Delicious Food</S.Heading1>
             <S.SearchBar>
                 <S.SearchField
+                    ref={inputRef}
+                    name="query"
                     type="search"
                     placeholder="Search For Your Favorite Food"
-                    onChange={handleChange}
-                    onKeyDown={handleEnter}
+                    onChange={formik.handleChange}
                 />
-                <S.SearchButton onClick={setNewParams}>
+                <S.SearchButton type="submit">
                     <img src={SearchIcon} width={24} height={24} />
                 </S.SearchButton>
             </S.SearchBar>
+            {isTouched && formik.errors.query ? (
+                <S.ValidatonErrorMsg>{formik.errors.query}</S.ValidatonErrorMsg>
+            ) : null}
+
             <S.FilterPanel>
                 <DropdownMenu
                     setParameter={setDishType}

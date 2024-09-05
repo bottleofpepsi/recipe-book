@@ -14,11 +14,16 @@ export const DropdownItem = styled.li<{ selected?: boolean }>`
     align-items: center;
     padding: 5px 10px;
     border-radius: 8px;
+    color: #484848;
+    font: 400 16px "Roboto";
+    outline: none;
 
     transition:
         background-color 200ms ease-in-out,
         outline 100ms ease-in;
 
+    &:focus,
+    &:active,
     &:hover {
         outline: solid 0px #bb00ff00;
         background-color: #ecbaff;

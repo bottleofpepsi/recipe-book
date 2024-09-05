@@ -30,11 +30,11 @@ export function getAPIEnvVars() {
     };
 }
 
-export function setParameter(param: string[], value: string, set: boolean) {
+export function setParameter(this: string[], value: string, set: boolean) {
     if (set) {
-        param.push(value);
+        this.push(value);
         return;
     }
 
-    param.splice(param.indexOf(value), 1);
+    this.splice(this.indexOf(value), 1);
 }

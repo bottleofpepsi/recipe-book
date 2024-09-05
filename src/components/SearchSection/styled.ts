@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SearchForm = styled.nav`
+export const SearchForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,6 +19,22 @@ export const FilterPanel = styled.div`
 
     @media (max-width: 500px) {
         flex-direction: column-reverse;
+    }
+`;
+
+export const SearchBar = styled.div`
+    display: flex;
+    align-items: center;
+    transition: ease 0.5s;
+    background-color: #ffffff;
+    border: 1px solid #f17900;
+    border-radius: 48px;
+    width: 70vw;
+    padding: 12px 16px 12px 32px;
+    overflow: hidden;
+
+    &:focus-within {
+        box-shadow: 0 0 5px #f1790080;
     }
 `;
 
@@ -55,14 +71,8 @@ export const SearchButton = styled.button`
     }
 `;
 
-export const SearchBar = styled.div`
-    display: flex;
-    align-items: center;
-    transition: ease 0.5s;
-    background-color: #ffffff;
-    border: 1px solid #f17900;
-    border-radius: 48px;
-    width: 70vw;
-    padding: 12px 16px 12px 32px;
-    overflow: hidden;
+export const ValidatonErrorMsg = styled.span`
+    text-align: center;
+    color: #b00020;
+    font: 400 14px "Inter";
 `;
