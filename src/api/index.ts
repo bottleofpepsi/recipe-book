@@ -18,5 +18,7 @@ export async function fetchRecipeByID(id: string) {
     const response = await fetch(url);
     const json = await response.json();
 
+    console.log(json);
+
     return processInfo(json);
 }

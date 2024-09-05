@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import logo from "@/assets/logo.svg";
 
@@ -15,7 +16,11 @@ function Header({ isHomePage }: Props) {
                 <img src={logo} width={48} height={48} />
                 <S.Title>Modsen Recipe</S.Title>
             </S.LogoBanner>
-            {!isHomePage && <S.HomeLink href="#">Home</S.HomeLink>}
+            {!isHomePage && (
+                <Link to="/">
+                    <S.HomeLink>Home</S.HomeLink>
+                </Link>
+            )}
         </S.Header>
     );
 }

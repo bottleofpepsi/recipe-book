@@ -1,6 +1,7 @@
 type Ingredient = {
     text: string;
-    imageURL: string;
+    image: string;
+    foodId: string;
 };
 
 export default Ingredient;

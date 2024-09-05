@@ -25,7 +25,7 @@ export const Title = styled.span`
     ${shared}
 `;
 
-export const HomeLink = styled.a`
+export const HomeLink = styled.span`
     ${shared}
 
     &:hover {
