@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { fetchRecipeByID } from "@/api";
 import CaloriesIcon from "@/assets/calories.svg";
@@ -18,6 +18,10 @@ function RecipeInfoPage() {
     const { id } = useParams();
     const [recipeInfo, setRecipeInfo] = useState({} as RecipeInfo);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [hasError, setHasError] = useState(false);
+    const navigate = useNavigate();
+
+    if (hasError) throw new Error("Error");
 
     useEffect(() => {
         fetchRecipeByID(id!)
@@ -25,8 +29,9 @@ function RecipeInfoPage() {
                 setRecipeInfo(recipe);
                 setIsLoaded(true);
             })
-            .catch((reason) => {
-                throw new Error(reason);
+            .catch(() => {
+                navigate("/error");
+                setHasError(true);
             });
     }, []);
 

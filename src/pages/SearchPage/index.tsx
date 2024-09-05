@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import { fetchRecipesByQuery } from "@/api";
 import Footer from "@/components/Footer";
@@ -21,14 +22,19 @@ const initialParameters: SearchParameters = {
 function SearchPage() {
     const [parameters, setParameters] = useState(initialParameters);
 
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [results, setResults] = useState<Recipes>({} as Recipes);
+    const [hasError, setHasError] = useState(false);
+
+    const navigate = useNavigate();
 
     const paginate = () => {
         const newParams = { ...parameters };
         newParams.nextLink = results.nextLink;
         setParameters(newParams);
     };
+
+    if (hasError) throw new Error("Error");
 
     useEffect(() => {
         setIsLoading(true);
@@ -40,11 +46,12 @@ function SearchPage() {
                         ? newResults.items
                         : [...results.items, ...newResults.items];
                 setResults({ ...newResults, items: newItems });
+                setIsLoading(false);
             })
-            .catch((reason) => {
-                throw new Error(reason);
-            })
-            .finally(() => setIsLoading(false));
+            .catch(() => {
+                setHasError(true);
+                navigate("/error");
+            });
     }, [parameters]);
 
     return (
@@ -54,7 +61,9 @@ function SearchPage() {
                 <SearchSection params={parameters} setParams={setParameters} />
                 <SearchResults>
                     {results.items?.map((recipe) => (
-                        <RecipeCard key={recipe.id} recipe={recipe} />
+                        <Link to={`/${recipe.id}`}>
+                            <RecipeCard key={recipe.id} recipe={recipe} />
+                        </Link>
                     ))}
                 </SearchResults>
                 {isLoading && (
@@ -66,7 +75,7 @@ function SearchPage() {
                     <LoadMoreButton handleClick={paginate} />
                 )}
             </S.Main>
-            <Footer></Footer>
+            <Footer />
         </>
     );
 }
