@@ -4,7 +4,7 @@ export const Recipe = styled.article`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     flex-grow: 1;
     padding: 30px 120px;
     color: #ffffff;
@@ -50,6 +50,8 @@ export const RecipeLink = styled.a`
 export const DishImage = styled.img`
     position: sticky;
     top: calc(50vh - 200px);
+    /* border: 2px solid #000; */
+    box-shadow: 0px 0 15px #00000070;
     border-radius: 20px;
 `;
 
