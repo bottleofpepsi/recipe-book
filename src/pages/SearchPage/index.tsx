@@ -61,8 +61,8 @@ function SearchPage() {
                 <SearchSection setParams={setParameters} />
                 <SearchResults>
                     {results.items?.map((recipe) => (
-                        <Link to={`/${recipe.id}`}>
-                            <RecipeCard key={recipe.id} recipe={recipe} />
+                        <Link key={recipe.id} to={`/${recipe.id}`}>
+                            <RecipeCard recipe={recipe} />
                         </Link>
                     ))}
                 </SearchResults>

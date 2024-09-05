@@ -4,8 +4,9 @@ export const Main = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30px;
-    padding: 40px;
+    align-items: center;
+    gap: 40px;
+    padding: clamp(20px, 3%, 40px);
 `;
 
 export const LoaderContainer = styled.div`

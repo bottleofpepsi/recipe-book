@@ -8,6 +8,10 @@ export const DropdownMenu = styled.div`
     border-radius: 10px;
     background-color: #ffffff;
     width: 320px;
+
+    @media (max-width: 700px) {
+        width: clamp(300px, 70vw, 700px);
+    }
 `;
 
 export const DropdownButton = styled.div`
@@ -27,21 +31,22 @@ export const DropdownText = styled.span`
 `;
 
 export const DropdownList = styled.ul<{ $visible: boolean }>`
-    position: absolute;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    top: 60px;
     z-index: 2;
-    margin: 0;
-    border-radius: 20px;
-    background-color: #ffffff;
+    position: absolute;
+    top: 60px;
+    box-sizing: border-box;
+    width: inherit;
+    height: 190px;
     padding: 7px 7px 7px 4px;
-    width: 310px;
-    height: 160px;
+    border-radius: 20px;
+    border: 1px solid #f17900;
+    margin: 0;
+    background-color: #ffffff;
     list-style: none;
     overflow-y: scroll;
-    border: 1px solid #f17900;
 
     ${(props) => !props.$visible && `display: none`}
 `;

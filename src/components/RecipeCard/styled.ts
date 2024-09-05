@@ -20,9 +20,22 @@ export const Card = styled.article`
             box-shadow: 0px 0px 10px #a0a0a0;
         }
     }
+
+    @media (max-width: 700px) {
+        width: 350px;
+        font-size: 18px;
+    }
 `;
 
-export const DishImage = styled.img``;
+export const DishImage = styled.img`
+    width: 300px;
+    height: 300px;
+
+    @media (max-width: 700px) {
+        width: 350px;
+        height: 350px;
+    }
+`;
 
 export const Container = styled.div`
     display: flex;
@@ -30,10 +43,18 @@ export const Container = styled.div`
     justify-content: center;
     height: 100px;
     padding: 11px;
+
+    @media (max-width: 700px) {
+        height: 70px;
+    }
 `;
 
 export const DishName = styled.h3`
     font: 700 22px "Inter";
     color: #2e266f;
     text-align: center;
+
+    @media (max-width: 700px) {
+        font-size: 18px;
+    }
 `;

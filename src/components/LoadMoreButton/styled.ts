@@ -17,8 +17,8 @@ export const buttonStyles = css`
         transition: opacity 0.3s ease-in-out;
         box-shadow: 0px 4px 20px 0px #686de080;
         border-radius: inherit;
-        width: 250px;
-        height: 50px;
+        width: inherit;
+        height: inherit;
         content: "";
     }
 
