@@ -63,11 +63,13 @@ function RecipeInfoPage() {
                                 Recipe link
                             </S.RecipeLink>
                         </S.RecipeInfo>
-                        <S.DishImage
-                            src={recipeInfo.image.url}
-                            height={400}
-                            width={400}
-                        />
+                        <S.ImageWrapper>
+                            <S.DishImage
+                                src={recipeInfo.image.url}
+                                height={400}
+                                width={400}
+                            />
+                        </S.ImageWrapper>
                     </>
                 ) : (
                     <LoadingIndicator size={400} />
