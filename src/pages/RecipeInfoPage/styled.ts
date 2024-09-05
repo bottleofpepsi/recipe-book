@@ -6,12 +6,20 @@ export const Recipe = styled.article`
     align-items: center;
     gap: 20px;
     flex-grow: 1;
-    padding: 30px 120px;
+    padding: 50px 20px;
     color: #ffffff;
+
+    @media (max-width: 1030px) {
+        flex-direction: column-reverse;
+    }
 `;
 
 export const Heading1 = styled.h1`
     font: 500 40px "Playful Despair";
+
+    @media (max-width: 620px) {
+        font-size: 30px;
+    }
 `;
 
 export const RecipeInfo = styled.div`
@@ -19,9 +27,15 @@ export const RecipeInfo = styled.div`
     flex-direction: column;
     gap: 30px;
     flex-shrink: 1;
-    border-radius: 28px;
+    width: clamp(400px, 40%, 700px);
     padding: 75px 90px;
+    border-radius: 28px;
     background-color: #27355a;
+
+    @media (max-width: 620px) {
+        padding: 30px 20px 50px 20px;
+        width: clamp(320px, 40%, 620px);
+    }
 `;
 
 export const MealType = styled.span`
@@ -38,6 +52,7 @@ export const DishInfo = styled.div`
 export const RecipeLink = styled.a`
     font: 700 24px "Playful Despair";
     color: #ffffff;
+    width: fit-content;
 
     &:hover {
         color: #bbbbbb;
@@ -50,11 +65,22 @@ export const RecipeLink = styled.a`
 export const DishImage = styled.img`
     position: sticky;
     top: calc(50vh - 200px);
-    /* border: 2px solid #000; */
     box-shadow: 0px 0 15px #00000070;
     border-radius: 20px;
+
+    @media (max-width: 1030px) {
+        position: static;
+        top: auto;
+    }
+
+    @media (max-width: 620px) {
+        width: 350px;
+        height: 350px;
+    }
 `;
 
 export const ImageWrapper = styled.div`
-    align-self: stretch;
+    @media (min-width: 1030px) {
+        align-self: stretch;
+    }
 `;

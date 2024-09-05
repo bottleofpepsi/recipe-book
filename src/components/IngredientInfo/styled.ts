@@ -16,7 +16,10 @@ export const IngredientSection = styled.section`
             rgba(217, 217, 217, 0) 23.93%,
             rgba(217, 217, 217, 0.1) 100%
         );
-    /* overflow: hidden; */
+
+    @media (max-width: 620px) {
+        background: none;
+    }
 `;
 
 export const BorderWrapper = styled.div`
@@ -27,10 +30,14 @@ export const BorderWrapper = styled.div`
         rgba(255, 255, 255, 0) 0%,
         rgba(255, 255, 255, 0.2) 100%
     );
+
+    @media (max-width: 620px) {
+        background: none;
+    }
 `;
 
 export const ProductsSection = styled.section`
-    width: inherit;
+    /* width: inherit; */
 `;
 
 export const IngredientList = styled.ul`
@@ -52,11 +59,16 @@ export const ProductList = styled.ul`
     padding: 10px 0;
     display: flex;
     gap: 40px;
-    width: 700px;
     list-style: none;
     overflow-x: scroll;
 `;
 
 export const ProductImage = styled.img`
     border-radius: 10px;
+`;
+
+export const IngredientWithImage = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 `;
