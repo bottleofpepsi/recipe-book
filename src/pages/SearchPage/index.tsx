@@ -59,7 +59,7 @@ function SearchPage() {
             <Header isHomePage={true}></Header>
             <S.Main>
                 <SearchSection setParams={setParameters} />
-                <SearchResults>
+                <SearchResults noResults={!isLoading && !results.totalCount}>
                     {results.items?.map((recipe) => (
                         <Link key={recipe.id} to={`/${recipe.id}`}>
                             <RecipeCard recipe={recipe} />

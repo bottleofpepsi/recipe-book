@@ -20,6 +20,8 @@ function SearchSection({ setParams }: Props) {
             dietValues: [],
         },
         validationSchema: validationSchema,
+        validateOnBlur: false,
+        validateOnChange: false,
         onSubmit: (values) => {
             setParams({ ...values, nextLink: "" });
         },
