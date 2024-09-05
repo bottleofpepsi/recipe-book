@@ -7,3 +7,7 @@ html {
     overscroll-behavior: none;
     scroll-behavior: smooth;
 }
+
+a {
+    text-decoration: none;
+}
