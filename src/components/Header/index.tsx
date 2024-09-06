@@ -18,6 +18,7 @@ function Header({ isHomePage }: Props) {
 
     const toggleMenu = () => {
         document.body.style.overflow = burgerOpened ? "unset" : "hidden";
+        document.documentElement.scrollTop = 0;
         setBurgerOpened(!burgerOpened);
     };
 

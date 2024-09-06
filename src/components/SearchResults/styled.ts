@@ -23,12 +23,12 @@ export const Heading2 = styled.h2`
 export const Results = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
-    grid-template-rows: repeat(auto-fit, 1fr);
+    /* grid-template-rows: repeat(auto-fit, 1fr); */
     justify-content: center;
     gap: 20px 30px;
     width: clamp(350px, 90vw, 1300px);
 
-    @media (max-width: 450px) {
+    @media (max-width: 700px) {
         grid-template-columns: repeat(auto-fit, 350px);
     }
 `;
