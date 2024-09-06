@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Bullet from "@/assets/list-marker.svg";
+import useScreenWidth from "@/hooks/useScreenWidth";
 
 import * as S from "./styled";
 import { Props } from "./types";
 
 function IngredientInfo({ ingredients }: Props) {
-    const [screenWidth, setScreenWidth] = useState(screen.width);
+    const screenWidth = useScreenWidth();
 
     const productSection = (
         <S.ProductsSection>
@@ -24,18 +25,6 @@ function IngredientInfo({ ingredients }: Props) {
             </S.ProductList>
         </S.ProductsSection>
     );
-
-    useEffect(() => {
-        const handleResize = () => {
-            setScreenWidth(screen.width);
-        };
-
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    });
 
     return (
         <>
