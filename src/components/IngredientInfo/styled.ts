@@ -36,15 +36,15 @@ export const BorderWrapper = styled.div`
     }
 `;
 
-export const ProductsSection = styled.section`
-    /* width: inherit; */
-`;
-
 export const IngredientList = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 10px;
     list-style: none;
+
+    @media (max-width: 620px) {
+        gap: 30px;
+    }
 `;
 
 export const Label = styled.li`

@@ -10,7 +10,7 @@ function IngredientInfo({ ingredients }: Props) {
     const screenWidth = useScreenWidth();
 
     const productSection = (
-        <S.ProductsSection>
+        <section>
             <S.Heading2>Products</S.Heading2>
             <S.ProductList>
                 {ingredients.map((ingr) => (
@@ -23,7 +23,7 @@ function IngredientInfo({ ingredients }: Props) {
                     </li>
                 ))}
             </S.ProductList>
-        </S.ProductsSection>
+        </section>
     );
 
     return (
